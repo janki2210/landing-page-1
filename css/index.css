@@ -41,6 +41,14 @@ header ul li a{
     margin-left: 40px;
     text-decoration: none;
 }
+.toggle{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 11;
+    display: none;
+}
 .content{
     position: relative;
     width: 100%;
@@ -65,6 +73,7 @@ header ul li a{
 }
 .content .textbox p{
     color: black;
+    text-align: justify;
 }
 .content .textbox a{
     display: inline-block;
@@ -81,7 +90,7 @@ header ul li a{
     width: 600px;
     display: flex;
     justify-content: flex-end;
-    padding-right: 50px;
+    /* padding-right: 50px; */
     margin-top: 50px;
 }
 .content .imgbox img{
@@ -116,6 +125,7 @@ header ul li a{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: white;
 }
 .sci li{
     list-style-type: none;
@@ -135,4 +145,80 @@ header ul li a{
     height: 100%;
     background:rgb(3, 49, 3);
     clip-path: circle(600px at right 800px);
+}
+@media (max-width:991px){
+    header{
+        padding: 20px;
+    }
+    header .logo{
+        max-width: 60px;
+    }
+    header ul{
+        display: none;
+    }
+    .toggle{
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        z-index: 11;
+        display: block;
+    }
+    .toggle.active{
+        position: fixed;
+        right: 20px;
+    }
+    header ul.navigation.active{
+        position: fixed;
+        top: 57px;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background:green;
+        z-index: 10;
+        transition:all 1s ease-in-out;
+    }
+    header ul li a{
+        font-size: 1.5em;
+        margin: 5px 0;
+    }
+    section{
+        padding: 20px 20px 120px;
+    }
+    .content{
+        flex-direction: column;
+        margin-top: 100px;
+    }
+    .content .textbox h2{
+        font-size: 39px;
+        margin-bottom: 15px;
+    }
+    .content .textbox{
+        max-width: 100%;
+    }
+    .content .imgbox{
+        max-width: 100%;
+        justify-content: center;
+    }
+    .content .imgbox img{
+        max-width: 300px;
+    }
+    .thumb li img{
+        max-width: 40px;
+    }
+    .circle{
+        clip-path: circle(235px at center bottom);
+    }
+    .sci{
+        background: green;
+        right: 0;
+        top: 55%;
+        width: 50px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
 }
